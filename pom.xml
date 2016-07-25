@@ -55,18 +55,6 @@
             <version>${vertx.core.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-platform</artifactId>
-            <version>${vertx.platform.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-hazelcast</artifactId>
-            <version>${vertx.hazelcast.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
@@ -91,41 +79,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>io.vertx</groupId>
-                <artifactId>vertx-maven-plugin</artifactId>
-                <version>${maven.vertx.plugin.version}</version>
-                <configuration>
-                    <configFile>src/main/resources/mod-default-conf.json</configFile>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>io.vertx</groupId>
-                        <artifactId>vertx-platform</artifactId>
-                        <version>${vertx.platform.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>io.vertx</groupId>
-                        <artifactId>vertx-core</artifactId>
-                        <version>${vertx.core.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>io.vertx</groupId>
-                        <artifactId>vertx-hazelcast</artifactId>
-                        <version>${vertx.hazelcast.version}</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>PullInDeps</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>pullInDeps</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
-
     </build>
 </project>

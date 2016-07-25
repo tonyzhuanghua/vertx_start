@@ -1,4 +1,4 @@
-package io.vertx.note.router;
+package com.home.api.vertical;
 
 import io.vertx.core.Vertx;
 import io.vertx.ext.unit.Async;
@@ -10,14 +10,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(VertxUnitRunner.class)
-public class MyFirstVerticleTest {
+public class ApiHttpVerticleTest {
 
     private Vertx vertx;
 
     @Before
     public void setUp(TestContext context) {
         vertx = Vertx.vertx();
-        vertx.deployVerticle(MyFirstVerticle.class.getName(),
+        vertx.deployVerticle(ApiHttpVerticle.class.getName(),
                 context.asyncAssertSuccess());
     }
 
@@ -33,7 +33,7 @@ public class MyFirstVerticleTest {
         vertx.createHttpClient().getNow(8080, "localhost", "/",
                 response -> {
                     response.handler(body -> {
-                        context.assertTrue(body.toString().contains("Hello"));
+                        context.assertTrue(body.toString().contains("smartjava"));
                         async.complete();
                     });
                 });
