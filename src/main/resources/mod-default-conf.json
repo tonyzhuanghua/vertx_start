@@ -1,0 +1,16 @@
+{
+
+    "com.lasso.api.verticle.LassoApiHttpVerticle": {
+        "httpListenHost": "0.0.0.0",
+        "httpListenPort": 8085,
+        "Middleware": {
+            "Cors": {
+                "allowedOriginPattern": "(.*)",
+                "allowedMethods": "POST",
+                "allowedHeaders": "Origin",
+                "exposedHeaders": "",
+                "port": 8085
+            }
+        }
+    }
+}
