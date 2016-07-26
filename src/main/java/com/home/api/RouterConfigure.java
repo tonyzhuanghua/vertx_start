@@ -1,5 +1,6 @@
 package com.home.api;
 
+import com.home.api.middleware.CreateOrUpdateUserHandlerMiddleWare;
 import com.home.api.middleware.GetUserHandlerMiddleWare;
 import com.jetdrone.vertx.yoke.middleware.Router;
 
@@ -15,10 +16,13 @@ public class RouterConfigure {
     @Inject
     private GetUserHandlerMiddleWare getUserHandlerMiddleWare;
 
+    @Inject
+    private CreateOrUpdateUserHandlerMiddleWare createOrUpdateUserHandlerMiddleWare;
+
     public void configure() {
 
         router.get("/users/:id", getUserHandlerMiddleWare);
-        router.get("/users", getUserHandlerMiddleWare);
+        router.put("/users/:id", createOrUpdateUserHandlerMiddleWare);
 
     }
 
