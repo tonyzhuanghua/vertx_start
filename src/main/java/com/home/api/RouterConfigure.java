@@ -1,10 +1,9 @@
 package com.home.api;
 
-import javax.inject.Inject;
-
 import com.home.api.middleware.GetUserHandlerMiddleWare;
-import com.home.api.types.RestEndpointTypes;
 import com.jetdrone.vertx.yoke.middleware.Router;
+
+import javax.inject.Inject;
 
 /**
  * Created by zhuanghua on 16/7/25.
@@ -18,8 +17,12 @@ public class RouterConfigure {
 
     public void configure() {
 
-        router.get(RestEndpointTypes.GET_USER.value(), getUserHandlerMiddleWare);
+        router.get("/users/:id", getUserHandlerMiddleWare);
+        router.get("/users", getUserHandlerMiddleWare);
 
     }
 
+    public Router getRouter(){
+        return this.router;
+    }
 }

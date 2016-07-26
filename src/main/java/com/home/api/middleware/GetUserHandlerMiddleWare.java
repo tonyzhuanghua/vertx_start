@@ -19,7 +19,6 @@ public class GetUserHandlerMiddleWare extends Middleware {
     public void handle(YokeRequest yokeRequest, Handler<Object> handler) {
         JsonObject reply = new JsonObject();
         reply.put("test","good");
-
         replyBuilder.buildReply(yokeRequest,200,reply);
     }
 }

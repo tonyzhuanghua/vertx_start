@@ -2,9 +2,6 @@ package com.home.api.utils;
 
 import com.jetdrone.vertx.yoke.middleware.YokeRequest;
 import io.vertx.core.json.JsonObject;
-import io.vertx.core.logging.Logger;
-
-import javax.inject.Inject;
 
 public class ReplyBuilder {
 
